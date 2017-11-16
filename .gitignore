@@ -1,0 +1,5 @@
+.idea
+jsf-api-2.2.13.jar
+jsf-impl-2.2.13.jar
+mysql-connector-java-5.1.23-bin.jar
+*.jar

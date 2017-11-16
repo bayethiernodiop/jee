@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition>
+	<h:messages id="messages" style="color:red"/>
+	<h:panelGrid id="client" border="1" columns="2">
+		<h:outputText value="Nom"></h:outputText>
+		<h:inputText required="true" value="#{clientBean.client.nom}" label="Nom">
+			<f:validator validatorId="util.Chaine" />
+		</h:inputText>
+		<h:outputText value="Prenom"></h:outputText>
+		<h:inputText required="true" value="#{clientBean.client.prenom}" label="Prenom">
+			
+		</h:inputText>
+		<h:outputText value="Adresse"></h:outputText>
+		<h:inputTextarea required="true" value="#{clientBean.client.adresse}" label="Adresse">
+			
+		</h:inputTextarea>
+		<h:outputText value="Date"></h:outputText>
+		<h:inputText  required="true" value="#{clientBean.client.dateSouscription}" label="Date">
+			<f:convertDateTime pattern="dd/MM/yyyy" />
+		</h:inputText>
+		<h:commandButton value="Enregister" action="#{clientBean.save}">
+			<f:ajax execute="client" render="client clients messages"></f:ajax>
+		</h:commandButton>
+	</h:panelGrid>
+</ui:composition>
+</html>
